@@ -30,3 +30,7 @@
 .btn:not(:hover) {
     transition: 0.6s;
 }
+
+.posts{
+    margin-top: 10px;
+}

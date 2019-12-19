@@ -1,3 +1,23 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+*, ::after, ::before {
+    box-sizing: border-box;
+}
+
+ol, ul {
+    list-style: none;
+}
+
+.content{
+    background: #272727;
+
+    overflow-x: hidden;
+}
+
 .app-wrapper{
     display: grid;
     width: 1200px;
@@ -6,7 +26,7 @@
     "header header"
     "nav content";
     grid-template-rows: 60px 1fr;
-    grid-template-columns: 2fr 10fr;
+    grid-template-columns: 3fr 10fr;
     grid-gap: 10px;
 }
 
