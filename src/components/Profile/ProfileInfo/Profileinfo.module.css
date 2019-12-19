@@ -1,0 +1,8 @@
+.image img{
+    width: 100%;
+    background-size: cover;
+}
+
+.description{
+    padding: 10px;
+}

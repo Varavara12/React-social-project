@@ -1,0 +1,28 @@
+
+
+/*===================*/
+.user_main{
+    padding: 77px 0 27px 0;
+}
+
+.user_main h4{
+    color: #fff;
+    font-size: 18px;
+    text-transform: capitalize;
+    font-weight: 500;
+    margin-bottom: 5px;
+}
+
+.user_main span{
+    color: #a7a8aa;
+    font-size: 14px;
+    font-weight: 400;
+    display: block;
+    text-align: center;
+}
+.font{
+    color: #ff7555;
+    font-size: 14px;
+    margin-right: 5px;
+}
+

@@ -1,0 +1,35 @@
+
+
+/*====================*/
+.followers{
+    float: left;
+    width: 100%;
+    padding: 0;
+    margin-bottom: 27px;
+    display: flex;
+}
+
+.followers li:nth-child(1) {
+    border-right: 1px solid #585858;
+}
+
+.followers li {
+    Width: 50%;
+    text-align: center;
+}
+
+.follower_user h4{
+    color: #fff;
+    font-size: 16px;
+    text-transform: capitalize;
+    font-weight: 500;
+    margin-bottom: 5px;
+}
+
+.follower_user span{
+    color: #aeaeae;
+    font-size: 14px;
+    font-weight: 400;
+    margin-bottom: 0;
+}
+
