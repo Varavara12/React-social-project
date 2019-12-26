@@ -14,13 +14,13 @@ ol, ul {
 
 .content{
     background: #272727;
-
     overflow-x: hidden;
 }
 
 .app-wrapper{
     display: grid;
     width: 1200px;
+    height: 100vh;
     margin: 0 auto;
     grid-template-areas:
     "header header"
@@ -28,11 +28,12 @@ ol, ul {
     grid-template-rows: 60px 1fr;
     grid-template-columns: 3fr 10fr;
     grid-gap: 10px;
+
 }
 
 .app-wrapper-content{
     grid-area: content;
-    background-color: chartreuse;
+
 }
 
 

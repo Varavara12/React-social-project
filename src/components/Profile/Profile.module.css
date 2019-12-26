@@ -3,3 +3,68 @@
     background-size: cover;
 }
 
+.post{
+    border-radius: 3px;
+    float: left;
+    width: 100%;
+    background-color: #313131;
+    margin-bottom: 30px;
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.07);
+}
+
+/*======================*/
+.eventTop{
+    float: left;
+    width: 100%;
+    padding: 18px 20px;
+
+}
+
+.eventTopLeft{
+    float: left;
+
+}
+.eventTopLeft h4{
+
+    left: 0;
+    font-size: 16px;
+    font-weight: 500;
+    color: #fff;
+    line-height: 24px;
+    margin-bottom: 0;
+}
+.eventTopRight {
+    float: right;
+}
+
+.eventTopRight h4 {
+    font-size: 14px;
+    font-weight: 400;
+    color: #fff;
+    line-height: 24px;
+    margin-bottom: 0;
+}
+
+/*====================*/
+.photo{
+    float: left;
+    width: 100%;
+    position: relative;
+}
+
+.photo img {
+    width: 100%;
+}
+
+.photo_overlay{
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    opacity: .40;
+    background-image: -moz-linear-gradient(transparent, black 85%);
+    background-image: -webkit-linear-gradient(transparent, black 85%);
+    background-image: -ms-linear-gradient(transparent, black 85%);
+    background-image: linear-gradient(transparent, black 85%);
+}
