@@ -6,7 +6,7 @@ import s from './UserFoto.module.css';
 const UserFoto = (props) => {
     return (
         <div className={s.usr_pic}>
-            <img src="http://gambolthemes.net/html-items/d-goeveni/dark/images/homepage/left-side/profile-dp.jpg"
+            <img src="https://html.crumina.net/html-olympus/img/author-main1.jpg"
                  alt=""/>
         </div>
 

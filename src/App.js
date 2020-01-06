@@ -1,5 +1,6 @@
 import React from 'react';
 import './App.css';
+import './css/jquery.scrollbar.css'
 import Header from "./components/Header/Header";
 import NavBar from "./components/Navbar/Navbar";
 import Profile from "./components/Profile/Profile";
@@ -16,9 +17,9 @@ const App = (props) => {
             <div className="content">
                 <div className='app-wrapper'>
                     <Header/>
-                    <NavBar/>
+                    <NavBar state={props.state.UserPage}/>
                     <div className='app-wrapper-content'>
-                        <Route path='/profile' render={() =><Profile state={props.state.profilePage}/>}/>
+                        <Route path='/profile' render={() =><Profile state={props.state.profilePage} addPost={props.addPost}/>}/>
                         <Route path='/dialogs' render={() =><Dialogs state={props.state.dialogsPage}/>}/>
                         <Route path='/news' render={() =><News />}/>
                         <Route path='/music' render={() => <Music />}/>
