@@ -8,15 +8,18 @@ const MyPosts = (props) => {
 
     let postElements = props.postData.map((post) => <Post message={post.post} like={post.likesCount}/>);
     let addPost = () => {
+        props.addPost();
+    };
+    /*обработчик событий*/
+    let onPostChange = () =>{
         let text = newPostElement.current.value;
-        props.addPost(text);
-        newPostElement.current.value = '';
+        props.updateNewPostText(text)
     };
 
   return(
       <div className={s.postBlock}>
           <div>
-              <textarea ref={newPostElement}></textarea>
+              <textarea onChange={onPostChange} ref={newPostElement} value={props.newPostText} />
           </div>
           <div>
               <button className={s.btn} onClick={addPost}>click</button>

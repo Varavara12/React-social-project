@@ -1,16 +1,25 @@
 import * as serviceWorker from './serviceWorker';
-import state from './redux/state'
+import state, {subscribe} from './redux/state'
 import './js/jquery.scrollbar'
-import $ from 'jquery'
-import {renderedEntireTree} from "./render";
+import React from 'react';
+import ReactDOM from 'react-dom';
+import './index.css';
+import App from './App';
+import {addMessage, addPost, updateNewMessageText, updateNewPostText} from './redux/state'
 
 
+ let renderedEntireTree = (state) => {
+    ReactDOM.render(<App state={state} addPost={addPost}
+                         updateNewPostText={updateNewPostText}
+                         addMessage={addMessage}
+                         updateNewMessageText={updateNewMessageText}
 
-$(document).ready(function () {
-    $('.Message_scrollbar_wrapper__1KVyt').scrollbar();
-});
+    />, document.getElementById('root'));
+};
 
 renderedEntireTree(state);
+
+subscribe(renderedEntireTree);
 
 
 

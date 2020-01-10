@@ -7,7 +7,7 @@ import EventTop from "./EventTop/EventTop";
 
 const Dialogs = (props) => {
 
-    let dialogsElements = props.state.dialogs.map((dialog) => <DialogItem name={dialog.name} id={dialog.id} src={dialog.src}/>);
+    let dialogsElements = props.dialogsPage.dialogs.map((dialog) => <DialogItem name={dialog.name} id={dialog.id} src={dialog.src}/>);
 
     return (
         <div className={s.dialogs}>
@@ -16,7 +16,12 @@ const Dialogs = (props) => {
                 {dialogsElements}
             </div>
 
-            <Message state={props.state} />
+            <Message dialogsPage={props.dialogsPage.usersDialogs}
+                     newMessageText={props.dialogsPage.newMessageText}
+                     addMessage={props.addMessage}
+                     updateNewMessageText={props.updateNewMessageText}
+
+            />
 
 
 

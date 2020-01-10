@@ -1,0 +1,50 @@
+.user {
+    display: flex;
+    position: relative;
+    width: 100%;
+    border-top: 1px solid #272727;
+    padding: 20px;
+}
+.user_dt{
+    display: flex;
+}
+
+.user_dt img{
+    width: 40px;
+    height: 40px;
+    border-radius: 100%;
+    display: flex;
+}
+
+.user_dt a{
+    text-decoration: none;
+    color: #fff ;
+    font-size: 16px;
+    margin-bottom: 0;
+    margin-left: 10px;
+    font-weight: 500;
+    align-items: center;
+    display: flex;
+}
+.users_pos {
+    margin-right: 40px;
+}
+
+.request_btn{
+    border: 2px solid #ffffff;
+    background: #313131;
+    border-radius: 3px;
+    width: 40px;
+    height: 40px;
+    font-size: 14px;
+    text-align: center;
+    color: #ffffff;
+    right: 0;
+    position: absolute;
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+.request_btn:hover {
+    background: tomato;
+}
