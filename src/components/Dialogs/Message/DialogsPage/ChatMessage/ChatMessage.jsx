@@ -5,7 +5,7 @@ import RightUser from "./RightUser/RightUser";
 
 
 const ChatMessage = (props) => {
-
+          
     let messageElementsLeft = props.dialogsPage.leftUser.map(message => <LeftUser text={message.message}/>);
     let messageElementsRight = props.dialogsPage.rightUser.map(message => <RightUser text={message.message}/>);
     return (

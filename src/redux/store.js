@@ -1,3 +1,7 @@
+import profileReducer from "./profile-reducer";
+import dialogsReducer from "./dialogs-reducer";
+import usersReducer from "./users-reducer";
+
 let store = {
     _state: {
         profilePage: {
@@ -47,40 +51,30 @@ let store = {
             ]
         }
     },
-    renderedEntireTree() {
-    console.log('rer')
-    },
-    addPost () {
-    let newPost ={
-        id: 5,
-        post: state.profilePage.newPostText,
-        likesCount: 0
-    };
-    state.profilePage.postData.push(newPost);
-    state.profilePage.newPostText = '';
-    renderedEntireTree(state);
-},
-    updateNewPostText (newText) {
-    state.profilePage.newPostText = newText;
-    renderedEntireTree(state);
-},
-    addMessage  () {
-    let newMessage ={
-        id: 5,
-        message: state.dialogsPage.newMessageText,
-    };
-    state.dialogsPage.usersDialogs.rightUser.push(newMessage);
-    state.dialogsPage.newMessageText = '';
-    renderedEntireTree(state);
-},
-    updateNewMessageText (newTextMessage) {
-    state.dialogsPage.newMessageText = newTextMessage;
-    renderedEntireTree(state);
-},
-    subscribe (observer) {
-    renderedEntireTree = observer
-}
+    _callSubscriber() {
 
+    },
+
+    getState () {
+         return this._state
+    },
+    subscribe (observer) {
+    this._callSubscriber = observer
+    },
+
+    dispatch(action) {
+
+        this._state.profilePage = profileReducer(this._state.profilePage, action);
+        this._state.dialogsPage = dialogsReducer(this._state.dialogsPage, action);
+        this._state.UserPage = usersReducer(this._state.UserPage, action);
+
+        this._callSubscriber(this._state);
+    }
+    
 };
 
-export default state     
+
+
+
+
+export default store

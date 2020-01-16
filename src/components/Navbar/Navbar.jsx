@@ -2,7 +2,7 @@ import React from 'react';
 import s from './Navbar.module.css';
 import Navlinks from "./Navlinks/Navlinks";
 import Followers from "./Followers/Followers";
-import Peoples from "./Peoples/Peoples";
+import PeoplesContainer from "./Peoples/PeoplesContainer";
 
 
 const NavBar = (props) => {
@@ -11,7 +11,7 @@ const NavBar = (props) => {
         <div className={s.main}>
            <Followers/>
            <Navlinks/>
-           <Peoples state={props.state.users}/>
+           <PeoplesContainer />
         </div>
     );
 };

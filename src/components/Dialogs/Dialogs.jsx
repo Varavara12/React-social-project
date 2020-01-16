@@ -8,23 +8,13 @@ import EventTop from "./EventTop/EventTop";
 const Dialogs = (props) => {
 
     let dialogsElements = props.dialogsPage.dialogs.map((dialog) => <DialogItem name={dialog.name} id={dialog.id} src={dialog.src}/>);
-
     return (
         <div className={s.dialogs}>
             <EventTop/>
             <div className={s.dialogsItem}>
                 {dialogsElements}
             </div>
-
-            <Message dialogsPage={props.dialogsPage.usersDialogs}
-                     newMessageText={props.dialogsPage.newMessageText}
-                     addMessage={props.addMessage}
-                     updateNewMessageText={props.updateNewMessageText}
-
-            />
-
-
-
+            <Message />
         </div>
     )
 };

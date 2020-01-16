@@ -5,7 +5,7 @@ import Users from "./Users/Users";
 
 const Peoples = (props) => {
 
-    let userElements = props.state.map((user) => <Users name={user.name} id={user.id} src={user.src}/>);
+    let userElements = props.UserPage.map((user) => <Users name={user.name} id={user.id} src={user.src}/>);
     return (
         <div className={s.people}>
             <Categories/>

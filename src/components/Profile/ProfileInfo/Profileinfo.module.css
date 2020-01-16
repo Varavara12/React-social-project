@@ -3,6 +3,62 @@
     background-size: cover;
 }
 
-.description{
-    padding: 10px;
+
+
+/*======================*/
+.eventTop{
+    grid-area: event;
+    width: 100%;
+    padding: 18px 20px;
+    border-bottom: 1px solid #272727;
+
+}
+
+.eventTopLeft{
+    float: left;
+
+}
+.eventTopLeft h4{
+
+    left: 0;
+    font-size: 16px;
+    font-weight: 500;
+    color: #fff;
+    line-height: 24px;
+    margin-bottom: 0;
+}
+.eventTopRight {
+    float: right;
+}
+
+.eventTopRight h4 {
+    font-size: 14px;
+    font-weight: 400;
+    color: #fff;
+    line-height: 24px;
+    margin-bottom: 0;
+}
+
+/*====================*/
+.photo{
+    float: left;
+    width: 100%;
+    position: relative;
+}
+
+.photo img {
+    width: 100%;
+}
+
+.photo_overlay{
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    opacity: .40;
+    background-image: -moz-linear-gradient(transparent, black 85%);
+    background-image: -webkit-linear-gradient(transparent, black 85%);
+    background-image: -ms-linear-gradient(transparent, black 85%);
+    background-image: linear-gradient(transparent, black 85%);
 }
