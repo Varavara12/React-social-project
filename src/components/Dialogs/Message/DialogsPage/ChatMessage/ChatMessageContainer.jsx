@@ -12,7 +12,7 @@ import {connect} from "react-redux";
 
 let mapStateToProps = (state) => {
     return {
-        dialogsPage: state.dialogsPage.usersDialogs
+        usersDialogs: state.dialogsPage.usersDialogs
     }
 };
 const ChatMessageContainer = connect(mapStateToProps) (ChatMessage);

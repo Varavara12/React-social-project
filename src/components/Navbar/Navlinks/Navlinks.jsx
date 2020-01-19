@@ -12,7 +12,7 @@ const Navlinks = () => {
             </div>
             <div className={s.item}><NavLink to="/profile" activeClassName={s.active}> <FontAwesomeIcon className={s.font} icon={faUser}/>Profile</NavLink></div>
             <div className={s.item}><NavLink to="/dialogs" activeClassName={s.active}><FontAwesomeIcon className={s.font} icon={faComments}/> Messages</NavLink></div>
-            <div className={s.item}><NavLink to="/news" activeClassName={s.active}> <FontAwesomeIcon className={s.font} icon={faNewspaper}/>News</NavLink></div>
+            <div className={s.item}><NavLink to="/users" activeClassName={s.active}> <FontAwesomeIcon className={s.font} icon={faNewspaper}/>Users</NavLink></div>
             <div className={s.item}><NavLink to="/music" activeClassName={s.active}><FontAwesomeIcon className={s.font} icon={faMusic}/>Music</NavLink></div>
             <div className={s.item}><NavLink to="/settings" activeClassName={s.active}><FontAwesomeIcon className={s.font} icon={faCog}/>Settings</NavLink></div>
         </nav>

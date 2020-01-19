@@ -7,7 +7,7 @@ import EventTop from "./EventTop/EventTop";
 
 const Dialogs = (props) => {
 
-    let dialogsElements = props.dialogsPage.dialogs.map((dialog) => <DialogItem name={dialog.name} id={dialog.id} src={dialog.src}/>);
+    let dialogsElements = props.dialogsPage.dialogs.map((dialog) => <DialogItem key={dialog.id} name={dialog.name} id={dialog.id} src={dialog.src}/>);
     return (
         <div className={s.dialogs}>
             <EventTop/>

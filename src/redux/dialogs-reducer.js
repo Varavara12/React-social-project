@@ -33,7 +33,7 @@
                 {id: 3, message: 'I live in Ukraine'},
                 {id: 4, message: 'Yo'},
                 {id: 5, message: 'Yo'},
-                {id: 5, message: 'Yo6666'}
+
             ],
             rightUser: [
                 {id: 1, message: 'Hi434'},
@@ -47,19 +47,24 @@
         newMessageText: '3434'
     };
 
-    const dialogsReducer = (state = initialState, action) =>{
+    const dialogsReducer = (state = initialState, action) => {
+
+        let stateCopy = {
+            ...state,
+            usersDialogs: {...state.usersDialogs},
+            rightUser: [...state.usersDialogs.rightUser]
+        };
         switch (action.type) {
-            case ADD_MESSAGE:
-                 let newMessage = {
-                    id: 5,
-                    message: state.newMessageText,
-                };
-                state.usersDialogs.rightUser.push(newMessage);
-                state.newMessageText = '';
-                return state;
             case UPDATE_NEW_MESSAGE_TEXT:
-                state.newMessageText = action.newTextMessage;
-                return state;
+                stateCopy.newMessageText = action.newTextMessage;
+                return stateCopy;
+
+            case ADD_MESSAGE:
+                let text = state.newMessageText;
+                stateCopy.newMessageText = '';
+                stateCopy.usersDialogs.rightUser.push({id: 6, message: text});
+                return stateCopy;
+
             default:
                 return state;
         }

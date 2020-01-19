@@ -4,7 +4,7 @@ import Peoples from "./Peoples";
 
 let mapStateToProps = (state) => {
     return {
-          UserPage: state.UserPage.users
+          followPage: state.followPage.users
     }
 };
 let PeoplesContainer = connect (mapStateToProps) (Peoples);
