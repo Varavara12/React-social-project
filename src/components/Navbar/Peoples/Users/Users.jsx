@@ -11,7 +11,7 @@ const Users = (props) => {
         <div className={s.user}>
             <div className={s.user_dt}>
                 <NavLink to={path}><img src={props.src} alt="avatar"/> </NavLink>
-                <NavLink  to={path}>{props.name}  </NavLink>
+                <NavLink  to={path}>{props.name} </NavLink>
             </div>
             <button className={s.request_btn}>
                 <FontAwesomeIcon icon={faUserPlus}/>

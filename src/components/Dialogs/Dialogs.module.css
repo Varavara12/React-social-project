@@ -4,7 +4,7 @@
         "event event"
         "dialogs messages";
     grid-template-rows: 60px 1fr;
-    grid-template-columns: 3fr 10fr;
+    
     border-radius: 3px;
     width: 100%;
     background-color: #313131;
@@ -17,38 +17,6 @@
     grid-area: dialogs;
 
 }
-.dialogsItem a{
-    width: 100%;
-    padding: 15px 20px;
-    border-bottom: 1px solid #272727;
-    text-decoration: none;
-    color: #fff ;
-    font-size: 16px;
-    align-items: center;
-    display: flex;
-}
 
-
-
-.user_pos{
-    padding-right: 20px;
-    display: flex;
-}
-.dialogsItem .active{
-    color: red;
-}
-
-.dialog{
-    display: flex;
-}
-
-.dialog img{
-    width: 40px;
-    height: 40px;
-    border-radius: 100%;
-    display: flex;
-}
-
-/*=================*/
 
 

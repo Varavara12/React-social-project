@@ -2,30 +2,7 @@
     const UPDATE_NEW_MESSAGE_TEXT = 'UPDATE-NEW-MESSAGE-TEXT';
 
     let initialState = {
-        dialogs: [
-            {id: 1, name: 'Vitalik', src: 'https://html.crumina.net/html-olympus/img/author-main1.jpg'},
-            {
-                id: 2,
-                name: 'Nikita',
-                src: 'http://gambolthemes.net/html-items/d-goeveni/dark/images/homepage/left-side/left-img-3.jpg'
-            },
-            {
-                id: 3,
-                name: 'Igor',
-                src: 'http://gambolthemes.net/html-items/d-goeveni/dark/images/homepage/left-side/left-img-4.jpg'
-            },
-            {
-                id: 4,
-                name: 'Andrey',
-                src: 'http://gambolthemes.net/html-items/d-goeveni/dark/images/event-view/user-5.jpg'
-            },
-            {
-                id: 5,
-                name: 'Alexa',
-                src: 'http://gambolthemes.net/html-items/d-goeveni/dark/images/homepage/left-side/left-img-2.jpg'
-            }
-        ],
-
+        
         usersDialogs: {
             leftUser: [
                 {id: 1, message: 'Hi'},

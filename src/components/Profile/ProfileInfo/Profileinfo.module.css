@@ -10,7 +10,7 @@
     grid-area: event;
     width: 100%;
     padding: 18px 20px;
-    border-bottom: 1px solid #272727;
+    
 
 }
 
@@ -25,7 +25,7 @@
     font-weight: 500;
     color: #fff;
     line-height: 24px;
-    margin-bottom: 0;
+    margin-bottom: 15px;
 }
 .eventTopRight {
     float: right;
