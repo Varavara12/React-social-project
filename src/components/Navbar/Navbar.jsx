@@ -2,18 +2,21 @@ import React from 'react';
 import s from './Navbar.module.css';
 import Navlinks from "./Navlinks/Navlinks";
 import Followers from "./Followers/Followers";
-import PeoplesContainer from "./Peoples/PeoplesContainer";
+import Peoples from "./Peoples/Peoples";
 
 
-const NavBar = (props) => {
+class NavBar extends React.Component {
+    render() {
+        return (
+            <div className={s.main}>
+                <Followers/>
+                <Navlinks/>
+                <Peoples/>
+            </div>
+        );
+    }
+}
 
-    return (
-        <div className={s.main}>
-           <Followers/>
-           <Navlinks/>
-           <PeoplesContainer />
-        </div>
-    );
-};
+
 
 export default NavBar

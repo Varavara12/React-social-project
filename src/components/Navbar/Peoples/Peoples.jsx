@@ -1,17 +1,19 @@
 import React from 'react';
 import s from './Peoples.module.css';
 import Categories from "./Categories/Categories";
-import Users from "./Users/Users";
+import UserFollowContainer from "./Users/UsersFollowContainer";
 
-const Peoples = (props) => {
 
-    let userElements = props.followPage.map((user) => <Users key={user.id} name={user.name} id={user.id} src={user.src}/>);
-    return (
-        <div className={s.people}>
-            <Categories/>
-            {userElements}
-        </div>
-    );
-};
+class Peoples extends React.Component {
+    render() {
+        return (
+            <div className={s.people}>
+                <Categories/>
+                <UserFollowContainer/>
+            </div>
+        );
+    }
+
+}
 
 export default Peoples

@@ -4,18 +4,18 @@ import Message from "./Message/Message";
 import EventTop from "./EventTop/EventTop";
 import DialogItemContainer from "./DialogsItem/DialogsItemContainer";
 
-
-const Dialogs = (props) => {
-
-    return (
-        <div className={s.dialogs}>
-            <EventTop/>
-            <div className={s.dialogsItem}>
-                <DialogItemContainer/>
+class Dialogs extends React.Component {
+    render() {
+        return (
+            <div className={s.dialogs}>
+                <EventTop/>
+                <div className={s.dialogsItem}>
+                    <DialogItemContainer/>
+                </div>
+                <Message/>
             </div>
-            <Message />
-        </div>
-    )
-};
+        )
+    }
+}
 
 export default Dialogs

@@ -6,15 +6,17 @@ import UserName from "./UserName/UserName";
 import FollowingUser from "./FollowingUser/FollowingUser";
 
 
-const Followers = (props) => {
-    return (
-       <div className={s.container}>
+class Followers extends React.Component{
+    render() {
+        return (
+            <div className={s.container}>
                 <FollowerLogo/>
                 <UserFoto/>
                 <UserName/>
                 <FollowingUser/>
             </div>
-    );
-};
+        );
+    }
+}
 
 export default Followers
