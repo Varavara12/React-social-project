@@ -120,9 +120,12 @@
     justify-content: center;
 }
 
-
-
 .photo{
     width: 50px;
     border-radius: 50%;
+}
+
+.seledtedPage{
+    font-weight: bold;
+    cursor: pointer;
 }

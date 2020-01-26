@@ -1,9 +1,11 @@
+.profileInfo{
+    position: relative;
+}
+
 .image img{
     width: 100%;
     background-size: cover;
 }
-
-
 
 /*======================*/
 .eventTop{
@@ -41,7 +43,6 @@
 
 /*====================*/
 .photo{
-    float: left;
     width: 100%;
     position: relative;
 }
@@ -61,4 +62,71 @@
     background-image: -webkit-linear-gradient(transparent, black 85%);
     background-image: -ms-linear-gradient(transparent, black 85%);
     background-image: linear-gradient(transparent, black 85%);
+}
+
+/*===========================*/
+.user_img {
+    width: 100%;
+    margin-bottom: 28px;
+    margin-top: -45px;
+    position: relative;
+    padding-left: 15px;
+    display: flex;
+
+}
+
+
+.user_img img{
+    border-radius: 50%;
+    border: 5px solid #fff;
+    width: 200px;
+}
+
+.user_tab{
+    width: 100%;
+    margin-top: 43px;
+    margin-left: 10px;
+    display: flex;
+    
+}
+
+.user_tab h3{
+    color: #aeaeae;
+    font-size: 24px;
+    font-weight: 600;
+    
+   
+}
+
+.aboutMe{
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.descp{
+    color: #686868;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.looking{
+    margin-left: 220px;
+}
+
+.tab{
+    width: 100%;
+    margin-bottom: 45px;
+    margin-top: 20px;
+}
+
+.icons{
+    font-size: 26px;
+    color: #3F51B5
+}
+
+.social_links li{
+    margin-right: 20px;
+}
+.social_links{
+    display: flex;
 }

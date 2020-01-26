@@ -14,25 +14,27 @@ ol, ul {
 
 .content{
     background: #272727;
-    overflow-x: hidden;
+
 }
 
 .app-wrapper{
     display: grid;
-    width: 1200px;
-    height: 100vh;
+    width: 1315px;
     margin: 0 auto;
     grid-template-areas:
-    "header header"
-    "nav content";
-    grid-template-rows: 60px 1fr;
-    grid-template-columns: 3fr 10fr;
+    "nav content info";
+    
+    /*grid-template-columns: 8fr 10fr;*/
     grid-gap: 10px;
 
 }
 
+
+
 .app-wrapper-content{
     grid-area: content;
+    max-width: 750px;
+    width: 750px;
 
 }
 

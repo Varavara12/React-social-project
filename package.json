@@ -39,6 +39,7 @@
     ]
   },
   "devDependencies": {
+    "@fortawesome/fontawesome-free-brands": "^5.0.13",
     "jquery": "^3.4.1"
   }
 }
