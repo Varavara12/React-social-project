@@ -1,7 +1,6 @@
 import React from 'react';
 import './App.css';
 import './css/jquery.scrollbar.css'
-import Header from "./components/Header/Header";
 import NavBar from "./components/Navbar/Navbar";
 import {Route} from "react-router-dom";
 import Music from "./components/Music/Music";
@@ -10,6 +9,7 @@ import UsersContainer from "./components/Users/UsersContainer";
 import Dialogs from "./components/Dialogs/Dialogs";
 import ProfileContainer from "./components/Profile/ProfileContainer";
 import Info from "./components/Info/Info";
+import HeaderContainer from "./components/Header/HeaderContainer";
 
 
 const App = () => {
@@ -17,7 +17,7 @@ const App = () => {
     return (
             <div className="content">
                 <div >
-                    <Header/>
+                    <HeaderContainer/>
                     <div className='app-wrapper' >
                         <NavBar />
                         <div className='app-wrapper-content'>
@@ -27,10 +27,7 @@ const App = () => {
                             <Route path='/music' render={() => <Music />}/>
                             <Route path='/settings' render={() => <Settings />}/>
                         </div>
-
                         <Info />
-
-
                     </div>
 
                 </div>

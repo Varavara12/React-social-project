@@ -1,13 +1,24 @@
 import React from 'react';
 import s from './Header.module.css';
+import {NavLink} from "react-router-dom";
+import logo from '../../image/logo.png';
+import HeaderNavLinks from "./HeaderNavLinks/HeaderNavLinks";
+import HeaderNavIcons from "./HeaderNavIcons/HeaderNavIcons";
 
 class Header extends React.Component {
     render() {
         return (
             <header className={s.header}>
-                <img
-                    src="https://upload.wikimedia.org/wikipedia/ru/c/cf/%D0%9B%D0%BE%D0%B1%D0%BE%D1%81_%D0%A3%D0%9F%D0%9D%D0%A4%D0%9C_%28%D0%BB%D0%BE%D0%B3%D0%BE%29.png"
-                    alt=""/>
+                <nav className={s.navbar}>
+                    <NavLink to='#'>
+                        <img src={logo} alt="logo"/>
+                    </NavLink>
+                    <HeaderNavLinks/>
+                    <HeaderNavIcons/>
+                    <div className={s.loginBlock}>
+                        {this.props.isAuth ? <NavLink to={'#'}> {this.props.login} </NavLink>  : <NavLink to={'/login'}>Login</NavLink>  }
+                    </div>
+                </nav>
             </header>
         );
     }

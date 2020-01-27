@@ -9,7 +9,7 @@ class NavBar extends React.Component {
         return (
             <div className={s.main}>
                 <div className={s.ui_block}>
-                    <div className={s.ui_block_title}>
+                    <div className={`${s.ui_block_title} ${s.first_title}`}>
                         <h6 className={s.title}>Last Photos</h6>
                     </div>
                     <div className={s.ui_block_content}>

@@ -4,6 +4,8 @@ import {NavLink} from "react-router-dom";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faEnvelope,} from "@fortawesome/free-solid-svg-icons"
 import userPfoto from "./../../image/users.png"
+import * as axios from "axios";
+
 const Users = (props) => {
 
      let pagesCount = Math.ceil(props.totalUsersCount / props.pageSize) ;
@@ -13,13 +15,11 @@ const Users = (props) => {
         }
     return (
             <div className={s.notifications_list}>
-
                 <h3 className={s.h3}>People</h3>
-
                 <div className={s.users}>
                     <div>
                         {pages.map(p => {
-                            return <span onClick={(e) => {props.onPageChanged(p)}} className={props.currentPage === p && s.seledtedPage}>{p}</span>
+                            return <span key={p} onClick={(e) => {props.onPageChanged(p)}} className={props.currentPage === p && s.seledtedPage}>{p}</span>
                         })}
                     </div>
                     {
@@ -29,7 +29,6 @@ const Users = (props) => {
                                     <img src={u.photos.small != null ? u.photos.small : userPfoto} alt="avatarka"/>
                                 </div>
                             </NavLink>
-
                             <div className={s.info}>
                                 <h3>
                                     <NavLink to='#'>
@@ -40,9 +39,33 @@ const Users = (props) => {
                                 <ul className={s.follow_list}>
                                     <li>
                                         {u.followed ? <button onClick={() => {
-                                            props.unfollow(u.id)
+
+                                            axios.delete(`https://social-network.samuraijs.com/api/1.0/follow/${u.id}`, {
+                                                withCredentials: true,
+                                                headers: {
+                                                    "API-KEY" : "817d25a7-0864-435b-8feb-23971ce675d8"
+                                                }
+                                            })
+                                                .then(response => {
+                                                    if(response.data.resultCode === 0) {
+                                                        props.unfollow(u.id)
+                                                    }
+                                                });
+
                                         }}> Unsubscribe </button> : <button onClick={() => {
-                                            props.follow(u.id)
+
+                                            axios.post(`https://social-network.samuraijs.com/api/1.0/follow/${u.id}`, {}, {
+                                                withCredentials: true,
+                                                headers: {
+                                                    "API-KEY" : "817d25a7-0864-435b-8feb-23971ce675d8"
+                                                }
+                                            })
+                                                .then(response => {
+                                                    if(response.data.resultCode === 0) {
+                                                        props.follow(u.id)
+                                                    }
+                                                });
+                                            
                                         }}> Subscribe </button>}
                                     </li>
                                     <li>

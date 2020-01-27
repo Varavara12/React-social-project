@@ -1,8 +1,107 @@
 .header{
     grid-area: header;
-    background-color: red;
+    background-color: #313131;
+    width: 100%;
+    padding-right: 24px;
+    padding-left: 24px;
+    margin-right: auto;
+    margin-left: auto;
 }
 
-.header img {
-    width: 50px;
+.navbar {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+    margin-left: 140px;
+    margin-right: 140px;
+}
+
+.navbar img{
+    width: 150px;
+}
+
+/*==================================*/
+
+.navbar_collapse{
+    display: flex;
+    flex: auto;
+    margin-left: 110px;
+    
+}
+
+.navbar_expand{
+    list-style: none;
+    display: flex;
+}
+
+.nav_item {
+    padding: 0 6px;
+    margin: auto;
+}
+
+.nav_item a{
+    padding-right: .5rem;
+    padding-left: .5rem;
+    font-size: 14px;
+    transition: all 0.4s ease-in;
+    text-decoration: none;
+    font-weight: 600;
+    color: #aeaeae;
+}
+
+.active:hover{
+    color: rgb(255,255,255);
+}
+
+.add_event{
+    font-size: 14px;
+    color: #fff;
+    background: #ff7555;
+    padding: 8px 15px;
+    border-radius: 3px;
+    margin-left: 30px;
+    text-align: center;
+    text-decoration: none;
+}
+
+/*===================*/
+.group_icons {
+    display: flex;
+    flex: auto;
+    
+    right: 310px;
+}
+
+.group_icons li {
+    display: inline-block;
+    margin: 0 14px;
+}
+
+.group_icons  a {
+    color: rgba(255, 255, 255, .5); 
+    font-size: 14px;
+    transition: all 0.4s ease-in;
+}
+
+.group_icons  a:hover {
+    color: rgb(255,255,255); 
+
+}
+
+/*==============*/
+.loginBlock a{
+    text-decoration: none;
+    color: #fff;
+}
+
+.loginBlock{
+    margin-right: 10px;
+}
+
+.loginBlock a{
+    color: green;
+    font-weight: 600;
 }
