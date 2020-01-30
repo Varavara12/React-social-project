@@ -2,253 +2,139 @@
     padding: 10px;
 }
 
-.btn {
-    width: 150px;
-    height: 30px;
-    text-decoration: none;
+/*=====================*/
 
-    color: #a675b3;
-    text-align: center;
-    line-height: 20px;
-    display: block;
-    margin: 20px auto;
-    font: normal 17px arial;
-}
-
-.btn:not(.active) {
-    box-shadow: inset 0 1px 1px rgba(111, 55, 125, 0.8), inset 0 -1px 0px rgba(63, 59, 113, 0.2), 0 9px 16px 0 rgba(0, 0, 0, 0.3), 0 4px 3px 0 rgba(0, 0, 0, 0.3), 0 0 0 1px #150a1e;
-    background-image: linear-gradient(#3b2751, #271739);
-    text-shadow: 0 0 21px rgba(223, 206, 228, 0.5), 0 -1px 0 #311d47;
-}
-
-.btn:not(.active):hover,
-.btn:not(.active):focus {
-    transition: color 200ms linear, text-shadow 500ms linear;
-    color: #fff;
-    text-shadow: 0 0 21px rgba(223, 206, 228, 0.5), 0 0 10px rgba(223, 206, 228, 0.4), 0 0 2px #2a153c;
-}
-.btn:not(:hover) {
-    transition: 0.6s;
-}
-
-.posts{
-    margin-top: 10px;
-}
-
-.item{
+.postbox{
+    background: #272727 none repeat scroll 0 0;
+    border: 1px solid #aeaeae;
+    border-radius: 5px;
+    display: inline-block;
     width: 100%;
-    background-color: #272727;
-    border-left: 1px solid #2e2b2b;
-    border-right: 1px solid #2e2b2b;
-    border-bottom: 1px solid #2e2b2b;
     margin-bottom: 20px;
     padding: 20px;
-    box-shadow: 0 2px #2e2b2b;
-}
-
-.post_topbar{
-    width: 100%;
     position: relative;
 }
-.usy_dt{
-    display: flex;
-}
 
-.usy_dt img{
-       border-radius: 50%;
-    margin-top: 2px;
-}
-
-.usy_name{
-    margin-left: 15px;
-}
-
-.usy_name h3{
-    color: #aeaeae;
-    font-size: 18px;
-    text-transform: capitalize;
-    font-weight: 600;
-    margin-bottom: 5px;
-    margin-top: 2px;
-}
-
-.usy_name span {
-    color: #b2b2b2;
-    font-size: 15px;
-}
-.usy_name img {
-    margin-top: 4px;
-    margin-right: 6px;
-}
-
-.epi_sec{
-    width: 100%;
-}
-
-.descp{
-    margin-top: 15px;
-    margin-bottom: 15px;
-}
-
-.descp span{
-    color: #fff;
-}
-
-.descp li {
-    display: inline-block;
-    margin-right: 15px;
-}
-
-.descp li img {
-    margin-right: 5px;
-}
-
-.faBookmark{
-    color: #aeaeae;
-    font-size: 24px;
-}
-
-.bk_links{
-    display: flex;
-    position: absolute;
-    right: 0;
-    top: 0;
-}
-.bk_links li{
-      margin-left: 20px;
-}
-
-.job_descp h3 {
-    color: #fff;
-    font-size: 16px;
-    font-weight: 600;
-    margin-bottom: 15px;
-}
-
-.job_dt {
-    width: 100%;
-    margin-bottom: 22px;
-}
-
-.job_dt li {
-    display: inline-block;
-    margin-right: 15px;
-}
-
-.job_dt li a {
-    color: #fff;
-    background-color: #51a5fb;
-    text-transform: capitalize;
-    padding: 5px 13px;
-    border-radius: 3px;
-    display: inline-block;
-    font-size: 14px;
+.create_post {
+    border-bottom: 1px solid #607D8B;
+    display: block;
     font-weight: 500;
-    text-decoration: none;
-}
-
-.job_dt li span {
-    color: #aeaeae;
-    font-size: 16px;
-    font-weight: 600;
-}
-
-.job_descp  p {
-    color: #fff;
     font-size: 15px;
-    line-height: 24px;
+    line-height: 15px;
     margin-bottom: 20px;
-}
-
-.skill_tags{
+    padding-bottom: 12px;
+    text-transform: capitalize;
     width: 100%;
-    margin-bottom: 15px;
-}
-
-.skill_tags li {
-    display: inline-block;
-    margin-right: 6px;
-    margin-bottom: 10px;
-}
-
-.skill_tags li span {
-    display: inline-block;
-    color: #b2b2b2;
-    font-size: 14px;
-    background-color: #f1f1f1;
-    border-radius: 30px;
-    padding: 7px 15px;
-    font-weight: 500;
-}
-
-.job_status_bar{
-    border-top: 1px solid #e5e5e5;
-}
-
-.like_com {
-    display: flex;
+    color: #fff;
     position: relative;
-    margin-top: 20px;
 }
 
-.like_com li {
+.create_post::before{
+    content: "";
+    height: 90%;
+    left: -20px;
+    position: absolute;
+    top: -5px;
+    width: 3px;
+    background: #fa6342
+}
+
+.new_postbox {
     display: inline-block;
-    margin-right: 15px;
+    width: 100%;
 }
 
-.like_com li button {
-    color: #b2b2b2;
+.new_postbox figure {
+    display: inline-block;
+    margin-bottom: 0;
+    vertical-align: top;
+}
+
+.newpst_input {
+    display: inline-block;
+    vertical-align: top;
+    width: 100%;
+    margin-top: 5px;
+}
+
+.newpst_input  form {
+    display: inline-block;
+    width: 100%;
+}
+
+.newpst_input input{
+    width: 100%;
+    position: relative;
+    z-index: 2;
+    margin-bottom: 0;
+    background: #fff;
+    border: 1px solid #f1f2f2;
+    box-shadow: none;
+    border-radius: 4px;
+    color: #272727;
+    height: 34px;
+    padding: 6px 12px;
     font-size: 14px;
-    font-weight: 500;
-    margin-top: 6px;
-    margin-right: 5px;
+    line-height: 1.42857143;
+}
+
+.attachments {
+    display: block;
+    text-align: left;
+}
+
+.attachments ul{
+    list-style: outside none none;
+    margin-bottom: 0;
+    padding-left: 0;
+    line-height: initial;
+}
+
+.attachments li {
+    display: inline-block;
+    vertical-align: middle;
+    font-size: 16px;
+    line-height: 0;
+    margin-left: 15px;
+    margin-top: 5px;
     cursor: pointer;
-    padding: 5px;
 }
 
-.like_com li img {
-    margin-top: 5px;
-    position: absolute;
+.attachments li:first-child {
+    margin-left: 0;
 }
 
-.like_com li span {
-    color: #ffffff;
-    font-size: 13px;
-    width: 30px;
-    height: 30px;
-    background-color: #e44d3a;
-    line-height: 30px;
-    border-radius: 30px;
-    float: left;
-    text-align: center;
-    font-weight: 600;
-    margin-left: 35px;
-    margin-top: 5px;
-    position: absolute;
-}
+ .add_loc {
+    cursor: pointer;
+    display: block;
+    font-size: 16px;
 
-.like_com li a {
-    color: #b2b2b2;
-    font-size: 14px;
+}
+ 
+ .map{
+     color: #fa6342;
+ }
+
+ .icons{
+     color: #757a95;
+ }
+
+ .post_btn {
+    background: #3ca9fc none repeat scroll 0 0;
+    border: medium none;
+    border-radius: 5px;
+    color: #fff;
     font-weight: 500;
-    float: left;
     margin-top: 11px;
-    margin-right: 5px;
-    margin-left: 70px;
-    text-decoration: none;
+    padding: 5px;
+    width: 100%;
+    transition: all 0.2s linear 0s;
+     cursor: pointer;
 }
+ 
+ .post_btn:hover {
+     background: #fa6342;
+}
+ 
 
-.faCommentAlt{
-    margin-right: 5px;
-}
-
-.views a {
-    color: #b2b2b2;
-    font-size: 14px;
-    margin-top: -27px;
-    cursor: pointer;
-    position: absolute;
-    right: 0;
-    text-decoration: none;
-}
 

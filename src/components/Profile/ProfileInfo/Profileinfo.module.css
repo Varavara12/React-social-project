@@ -70,7 +70,6 @@
     margin-bottom: 28px;
     margin-top: -45px;
     position: relative;
-    padding-left: 15px;
     display: flex;
 
 }
@@ -78,15 +77,20 @@
 
 .user_img img{
     border-radius: 50%;
-    border: 5px solid #fff;
-    width: 200px;
+    border: 1px solid #fff;
+    width: 155px;
+    height: 155px;
+    position: absolute;
+    top: -125px;
+    left: 13px;
 }
 
 .user_tab{
     width: 100%;
     margin-top: 43px;
-    margin-left: 10px;
+    background-color: aliceblue;
     display: flex;
+    padding: 10px;
     
 }
 

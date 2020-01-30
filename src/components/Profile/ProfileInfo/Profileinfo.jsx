@@ -1,20 +1,20 @@
 import React from 'react';
 import s from './Profileinfo.module.css';
 import Preloader from "../../common/Preloader/Preloader";
-import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
-import {faFacebook, faTwitter, faVk, faGithub, faInstagram} from '@fortawesome/fontawesome-free-brands';
-
+import IconsProfile from "./IconsProfile/IconsProfile";
+import ProfileStatus from "./ProfileStatus"
 
 const ProfileInfo = (props) => {
-    
-    if(!props.profile){
+
+    if(!props.profile ){
         return <Preloader/>
     }
     return (
         <div className={s.profileInfo}>
             <div className={s.eventTop}>
                 <div className={s.eventTopLeft}><h4>My profile</h4></div>
-                <div className={s.eventTopRight}><h4>Event Title Here</h4></div>
+                <ProfileStatus status ={props.status} updateStatus={props.updateStatus} />
+                {/*<div className={s.eventTopRight}><h4>Event Title Here</h4></div>*/}
             </div>
             <div>
                 <div className={s.photo}>
@@ -31,25 +31,7 @@ const ProfileInfo = (props) => {
                         <div className={s.aboutMe}>
                             <span className={s.descp}>{props.profile.aboutMe}</span>
                         </div>
-                        <div className={s.tab}>
-                            <ul className={s.social_links}>
-                                <li>
-                                        <FontAwesomeIcon  className={s.icons} icon={faFacebook}/>
-                                </li>
-                                <li>
-                                    <FontAwesomeIcon className={s.icons} icon={faTwitter}/>
-                                </li>
-                                <li>
-                                    <FontAwesomeIcon className={s.icons} icon={faGithub}/>
-                                </li>
-                                <li>
-                                    <FontAwesomeIcon className={s.icons} icon={faVk}/>
-                                </li>
-                                <li>
-                                     <FontAwesomeIcon className={s.icons} icon={faInstagram}/>
-                                </li>
-                            </ul>
-                        </div>
+                        <IconsProfile/>
                     </div>
 
                     <div className={s.looking}>

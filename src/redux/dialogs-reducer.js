@@ -1,5 +1,4 @@
     const ADD_MESSAGE = 'ADD-MESSAGE';
-    const UPDATE_NEW_MESSAGE_TEXT = 'UPDATE-NEW-MESSAGE-TEXT';
 
     let initialState = {
         
@@ -20,8 +19,7 @@
                 {id: 5, message: 'Yo3434'}
             ]
         }
-        ,
-        newMessageText: '3434'
+        
     };
 
     const dialogsReducer = (state = initialState, action) => {
@@ -32,13 +30,9 @@
             rightUser: [...state.usersDialogs.rightUser]
         };
         switch (action.type) {
-            case UPDATE_NEW_MESSAGE_TEXT:
-                stateCopy.newMessageText = action.newTextMessage;
-                return stateCopy;
-
+            
             case ADD_MESSAGE:
-                let text = state.newMessageText;
-                stateCopy.newMessageText = '';
+                let text = action.newMessageText;
                 stateCopy.usersDialogs.rightUser.push({id: 6, message: text});
                 return stateCopy;
 
@@ -48,7 +42,7 @@
 
     };
 
-    export const addMessageActionCreator = () =>({type: 'ADD-MESSAGE'});
-    export const updateNewMessageTextActionCreator = (text) => ({type: 'UPDATE-NEW-MESSAGE-TEXT', newTextMessage: text });
+
+    export const addMessageActionCreator = (newMessageText) =>({type: 'ADD-MESSAGE', newMessageText });
 
     export default  dialogsReducer;

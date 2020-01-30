@@ -4,7 +4,8 @@ import {NavLink} from "react-router-dom";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faEnvelope,} from "@fortawesome/free-solid-svg-icons"
 import userPfoto from "./../../image/users.png"
-import * as axios from "axios";
+import {userAPI} from "../../api/api";
+
 
 const Users = (props) => {
 
@@ -38,34 +39,10 @@ const Users = (props) => {
                                 </h3>
                                 <ul className={s.follow_list}>
                                     <li>
-                                        {u.followed ? <button onClick={() => {
-
-                                            axios.delete(`https://social-network.samuraijs.com/api/1.0/follow/${u.id}`, {
-                                                withCredentials: true,
-                                                headers: {
-                                                    "API-KEY" : "817d25a7-0864-435b-8feb-23971ce675d8"
-                                                }
-                                            })
-                                                .then(response => {
-                                                    if(response.data.resultCode === 0) {
-                                                        props.unfollow(u.id)
-                                                    }
-                                                });
-
-                                        }}> Unsubscribe </button> : <button onClick={() => {
-
-                                            axios.post(`https://social-network.samuraijs.com/api/1.0/follow/${u.id}`, {}, {
-                                                withCredentials: true,
-                                                headers: {
-                                                    "API-KEY" : "817d25a7-0864-435b-8feb-23971ce675d8"
-                                                }
-                                            })
-                                                .then(response => {
-                                                    if(response.data.resultCode === 0) {
-                                                        props.follow(u.id)
-                                                    }
-                                                });
-                                            
+                                        {u.followed ? <button disabled={props.followingInProgress.some(id => id === u.id)} onClick={() => {
+                                           props.unfollow(u.id)
+                                        }}> Unsubscribe </button> : <button disabled={props.followingInProgress.some(id => id === u.id)} onClick={() => {
+                                            props.follow(u.id)
                                         }}> Subscribe </button>}
                                     </li>
                                     <li>

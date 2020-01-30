@@ -1,31 +1,35 @@
 import React from "react";
 import s from './SentMessage.module.css'
+import {Field, reduxForm} from "redux-form";
 
 class SentMessage extends React.Component {
-    sentButton = () => {
-        this.props.addMessage();
-    };
-    onMessageChange = (e) => {
-        let text = e.target.value;
-        this.props.updateNewMessageText(text);
-    };
+      addNewMessage =(values) => {
+          this.props.addMessage(values.newMessageText);  /*name={"newMessageText"} применяем интификатор*/
+      };
 
     render() {
         return (
             <div className={s.sent_message}>
-                <div className={s.input_group}>
-                    <input onChange={this.onMessageChange} type="text" className={s.form_control}
-                           placeholder='Type your message' value={this.props.newMessageText}/>
-                    <span className={s.btn}>
-                        <button className={s.btn_button} type="button" onClick={this.sentButton}>
-                            Send
-                        </button>
-                    </span>
-                </div>
+                  <AddMessageFormRedux onSubmit={this.addNewMessage} />  {/*Сформированная компонента с помощью HOC*/}
             </div>
         );
     }
-
 }
+
+const addMessageForm = (props) => {
+    return (
+        <form onSubmit={props.handleSubmit} className={s.input_group}>
+            <div>                                       {/*name={"newMessageText"} интификатор*/}
+                <Field placeholder={"Type your message"} name={"newMessageText"} component={"input"} />
+            </div>
+             <span className={s.btn}>
+                 <button className={s.btn_button}>Send</button>
+             </span>
+
+        </form>
+    )
+};
+                                   /*form: "dialogAddMessageForm определяем что будет в state*/
+const AddMessageFormRedux = reduxForm ({form: "dialogAddMessageForm"}) (addMessageForm);
 
 export default SentMessage

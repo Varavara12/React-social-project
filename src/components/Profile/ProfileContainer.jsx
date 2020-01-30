@@ -1,34 +1,44 @@
 import React from 'react';
 import Profile from "./Profile";
-import * as axios from "axios";
 import {connect} from "react-redux";
-import {setUserProfile} from "../../redux/profile-reducer";
-import {withRouter} from "react-router-dom";
+import {getStatus, getUserProfile, updateStatus} from "../../redux/profile-reducer";
+import { withRouter} from "react-router-dom";
+import {compose} from "redux";
 
 class ProfileContainer extends React.Component{
 
     componentDidMount() {
         let userId = this.props.match.params.userId;
         if (!userId) {
-            userId = 2
+            userId = 5722
         }
-        axios.get(`https://social-network.samuraijs.com/api/1.0/profile/` + userId)
-            .then(response => {
-                this.props.setUserProfile(response.data);
-            });
+        this.props.getUserProfile(userId);// Функция Thunk
+        this.props.getStatus(userId)
     }
 
+
     render() {
-        return (
-           <Profile {...this.props} profile={this.props.profile}/>
+        return (                          /*status к нам пришел из mapStateToProps и прокидываем дальше в props*/
+           <Profile {...this.props} profile={this.props.profile} status={this.props.status} updateStatus={this.props.updateStatus} />
         );
     }
 }
 
 let mapStateToProps = (state) => ({
-      profile: state.profilePage.profile
+    profile: state.profilePage.profile,
+    status: state.profilePage.status
+
 });
 
-let WithUrlDataContainerComponent = withRouter(ProfileContainer);
+/*      как было раньше потом приминили функцию compose() ()
+let AuthRedirectComponent = withAuthRedirect(ProfileContainer);
+let WithUrlDataContainerComponent = withRouter(AuthRedirectComponent);
+connect (mapStateToProps, {getUserProfile}) (WithUrlDataContainerComponent);*/
 
-export default connect (mapStateToProps, {setUserProfile}) (WithUrlDataContainerComponent);
+export default compose(
+    connect (mapStateToProps, {getUserProfile, getStatus, updateStatus}),  //3
+    withRouter,  // 2
+
+) (ProfileContainer);
+
+// withAuthRedirect // 1/* (Испльзовали HOC)*/
