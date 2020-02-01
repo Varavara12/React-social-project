@@ -3,6 +3,8 @@ import s from './MyPosts.module.css';
 import Post from "./Post/Post";
 import IconPost from "./IconPost/IconPost";
 import {Field, reduxForm} from "redux-form";
+import {maxLengthCreator, requireField} from "../../utils/validators/validators";
+import {Input} from "../../common/FormsControls/FormsControls";
 
 const MyPosts = (props) => {
 
@@ -26,13 +28,13 @@ const MyPosts = (props) => {
   );
 };
 
+const maxLength10 = maxLengthCreator(10);
+
 const AddPostForm = (props) => {
       return (
           <form onSubmit={props.handleSubmit}>  {/*handleSubmit доверяем обработку событий*/}
                 <div className={s.newpst_input}>
-                    <Field placeholder={"Type your message"} name={"newPostText"} component={"input"} />
-                    {/*<input onChange={onPostChange}  className={s.form_control}
-                           placeholder='Type your message' value={props.newPostText}/>*/}
+                    <Field placeholder={"Type your message"} name={"newPostText"} component={Input} validate={[requireField, maxLength10]} />
                 </div>
                 <IconPost/>
                 <div>

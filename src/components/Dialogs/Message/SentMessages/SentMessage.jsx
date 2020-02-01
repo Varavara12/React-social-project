@@ -1,12 +1,13 @@
 import React from "react";
 import s from './SentMessage.module.css'
 import {Field, reduxForm} from "redux-form";
+import {Input} from "../../../common/FormsControls/FormsControls";
+import {maxLengthCreator, requireField} from "../../../utils/validators/validators";
 
 class SentMessage extends React.Component {
       addNewMessage =(values) => {
           this.props.addMessage(values.newMessageText);  /*name={"newMessageText"} применяем интификатор*/
       };
-
     render() {
         return (
             <div className={s.sent_message}>
@@ -15,12 +16,13 @@ class SentMessage extends React.Component {
         );
     }
 }
-
+const  maxLength50 = maxLengthCreator(50);
 const addMessageForm = (props) => {
+
     return (
         <form onSubmit={props.handleSubmit} className={s.input_group}>
             <div>                                       {/*name={"newMessageText"} интификатор*/}
-                <Field placeholder={"Type your message"} name={"newMessageText"} component={"input"} />
+                <Field placeholder={"Type your message"} name={"newMessageText"} component={Input} validate={[requireField, maxLength50]} />
             </div>
              <span className={s.btn}>
                  <button className={s.btn_button}>Send</button>

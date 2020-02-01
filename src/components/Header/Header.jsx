@@ -16,7 +16,9 @@ class Header extends React.Component {
                     <HeaderNavLinks/>
                     <HeaderNavIcons/>
                     <div className={s.loginBlock}>
-                        {this.props.isAuth ? <NavLink to={'#'}> {this.props.login} </NavLink>  : <NavLink to={'/login'}>Login</NavLink>  }
+                        {this.props.isAuth
+                            ? <div><NavLink to={'#'}> {this.props.login} </NavLink> <button onClick={this.props.logout}>Logout</button></div>
+                            : <NavLink to={'/login'}>Login</NavLink>  }
                     </div>
                 </nav>
             </header>

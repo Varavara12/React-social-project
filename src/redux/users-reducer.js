@@ -73,12 +73,13 @@ export const toggleIsFetching = (isFetching) => ({type: TOGGLE_IS_FETCHING, isFe
 export const toggleFollowingProgress = (isFetching, userId) => ({type: TOGGLE_IS_FOLLOWING_PROGRESS, isFetching, userId });
 
 
-export const  getUsers = (currentPage, pageSize) => {
+export const  getUsers = (page, pageSize) => {
    return (dispatch) => {
         dispatch(toggleIsFetching(true));
+        dispatch(setCurrentPage(page));
         // создали запрос в одтельном файле и вызвали getUsers(DAL) api.js
         // И передали ей два параметра функции которые понадобяться к запросу на сервер
-        userAPI.getUsers(currentPage, pageSize).then(data => {
+        userAPI.getUsers(page, pageSize).then(data => {
             dispatch(toggleIsFetching(false));        // data - вернули в промисах только data место response(Все данные) в api.js чтоб были данные которые ей нужны
             dispatch(setUsers(data.items));
             dispatch(setTotalUsersCount(data.totalCount));
