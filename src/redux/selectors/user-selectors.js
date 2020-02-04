@@ -1,6 +1,18 @@
+import {createSelector} from "reselect"
+
 export const getUsersPage = (state) => {
-    return state.usersPage.users
+    return state.usersPage.users                            /*Работа reselect плагина*/
 };
+
+/*export const getUsersPageSelector = (state) => {
+    return getUsersPage().filter(u => true)
+};
+export const getUsersSuperSelector = createSelector( getUsersPage, (users) => {
+     return   users.filter(u => true)
+});*/
+
+
+
 
 export const getPageSize = (state) => {
     return state.usersPage.pageSize

@@ -6,12 +6,14 @@ import {Field, reduxForm} from "redux-form";
 import {maxLengthCreator, requireField} from "../../utils/validators/validators";
 import {Input} from "../../common/FormsControls/FormsControls";
 
-const MyPosts = (props) => {
+/*PureComponent заменяет оптимизацию shouldComponentUpdate*/
+const MyPosts = React.memo(props => {
 
-   let addPostMessage = (values) => {
-          props.addPost(values.newPostText);  /*name={"newMessageText"} применяем интификатор*/
-      };
-   let postElements = props.postData.map(d => <Post key={d.id} post={d.post} likesCount={d.likesCount} views={d.views}/>)
+    let addPostMessage = (values) => {
+        props.addPost(values.newPostText);  /*name={"newMessageText"} применяем интификатор*/
+    };
+    let postElements = [...props.postData].reverse().map(d => <Post key={d.id} post={d.post} likesCount={d.likesCount}
+                                                     views={d.views}/>)
     return (
         <div className={s.postBlock}>
             <div className={s.postbox}>
@@ -25,8 +27,8 @@ const MyPosts = (props) => {
             </div>
             {postElements}
         </div>
-  );
-};
+    );
+});
 
 const maxLength10 = maxLengthCreator(10);
 

@@ -3,6 +3,7 @@ import s from './Profileinfo.module.css';
 import Preloader from "../../common/Preloader/Preloader";
 import IconsProfile from "./IconsProfile/IconsProfile";
 import ProfileStatus from "./ProfileStatus"
+import ProfileStatusWithHooks from "./ProfileStatusWithHooks";
 
 const ProfileInfo = (props) => {
 
@@ -13,7 +14,7 @@ const ProfileInfo = (props) => {
         <div className={s.profileInfo}>
             <div className={s.eventTop}>
                 <div className={s.eventTopLeft}><h4>My profile</h4></div>
-                <ProfileStatus status ={props.status} updateStatus={props.updateStatus} />
+                <ProfileStatusWithHooks status ={props.status} updateStatus={props.updateStatus} />
                 {/*<div className={s.eventTopRight}><h4>Event Title Here</h4></div>*/}
             </div>
             <div>

@@ -1,4 +1,5 @@
 import {userAPI} from "../api/api";
+import {updateObjectInArray} from "../components/utils/objectHelper/object-helper";
 
 const FOLLOW = 'FOLLOW';
 const UNFOLLOW = 'UNFOLLOW';
@@ -23,22 +24,25 @@ const usersReducer = (state = initialState, action) =>{
         case FOLLOW:
             return  {
                 ...state,
-                users: state.users.map(u => {
+                users: updateObjectInArray(state.users, action.userId, "id", {followed: true}) /*сделали хелпео вынесли в отдельную функцию чтоб не дублировался код*/
+                /*
+                    state.users.map(u => {
                     if(u.id === action.userId) {
                         return {...u, followed: true}
                     }
                     return u
-                })
+                })*/
             };
         case UNFOLLOW:
              return  {
                 ...state,
-                users: state.users.map(u => {
+                users: updateObjectInArray(state.users, action.userId, "id", {followed: false})
+                 /*state.users.map(u => {
                     if(u.id === action.userId) {
                         return {...u, followed: false}
                     }
                     return u
-                })
+                })*/
             };
         case SET_USERS: {
             return {...state, users: action.users}
@@ -73,44 +77,40 @@ export const toggleIsFetching = (isFetching) => ({type: TOGGLE_IS_FETCHING, isFe
 export const toggleFollowingProgress = (isFetching, userId) => ({type: TOGGLE_IS_FOLLOWING_PROGRESS, isFetching, userId });
 
 
-export const  getUsers = (page, pageSize) => {
-   return (dispatch) => {
+export const getUsers = (page, pageSize) => {
+    return async (dispatch) => {
         dispatch(toggleIsFetching(true));
         dispatch(setCurrentPage(page));
         // создали запрос в одтельном файле и вызвали getUsers(DAL) api.js
         // И передали ей два параметра функции которые понадобяться к запросу на сервер
-        userAPI.getUsers(page, pageSize).then(data => {
-            dispatch(toggleIsFetching(false));        // data - вернули в промисах только data место response(Все данные) в api.js чтоб были данные которые ей нужны
-            dispatch(setUsers(data.items));
-            dispatch(setTotalUsersCount(data.totalCount));
+        let data = await userAPI.getUsers(page, pageSize);
+        dispatch(toggleIsFetching(false));        // data - вернули в промисах только data место response(Все данные) в api.js чтоб были данные которые ей нужны
+        dispatch(setUsers(data.items));
+        dispatch(setTotalUsersCount(data.totalCount));
 
-        });
     }
 };
- /*thunk санки*/
+/*thunk санки*/
 export const follow = (userId) => {
-    return (dispatch) => {
-        dispatch (toggleFollowingProgress(true, userId));
-        userAPI.follow(userId)
-            .then(response => {
-                if (response.data.resultCode === 0) {
-                    dispatch(followSuccess(userId))
-                }
-                 dispatch (toggleFollowingProgress(false, userId));
-            });
+    return async (dispatch) => {
+        dispatch(toggleFollowingProgress(true, userId));
+        let response = await userAPI.follow(userId)
+        if (response.data.resultCode === 0) {
+            dispatch(followSuccess(userId))
+        }
+        dispatch(toggleFollowingProgress(false, userId));
     }
 };
 
 export const unfollow = (userId) => {
-    return (dispatch) => {
+    return async (dispatch) => {
         dispatch(toggleFollowingProgress(true, userId));
-        userAPI.unfollow(userId)
-            .then(response => {
-                if (response.data.resultCode === 0) {
-                    dispatch(unfollowSuccess(userId))
-                }
-                dispatch(toggleFollowingProgress(false, userId));
-            });
+        let response = await userAPI.unfollow(userId)
+        if (response.data.resultCode === 0) {
+            dispatch(unfollowSuccess(userId))
+        }
+        dispatch(toggleFollowingProgress(false, userId));
+
     }
 
 /*    props.toggleFollowingProgress(true, u.id);

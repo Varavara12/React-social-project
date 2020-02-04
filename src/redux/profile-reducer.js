@@ -45,37 +45,23 @@ export const addPost = (newPostText) =>({type: ADD_POST, newPostText});
 export const setUserProfile = (profile) =>({type: SET_USER_PROFILE, profile});
 export const setStatus = (status) => ({type: SET_STATUS, status });
 
-export const getUserProfile = (userId) => {
-    return (dispatch) => {
-        userAPI.getProfile(userId)
-            .then(response => {
-                dispatch (setUserProfile(response.data));
-            });
+export const getUserProfile = (userId) => async (dispatch) => {
+    let response = await userAPI.getProfile(userId);
+    dispatch(setUserProfile(response.data));
 
-    };
 };
 
-export const getStatus = (userId) => {     /*пулучить статус от пользователя*/
-    return (dispatch) => {
-        profileAPI.getStatus(userId)             /*отправить запрос на сервак*/
-            .then(response => {
-                dispatch (setStatus(response.data));   /* То что придет задиспатчить*/
-            });
-
-    };
+export const getStatus = (userId) => async (dispatch) => {     /*пулучить статус от пользователя*/
+    let response = await profileAPI.getStatus(userId)             /*отправить запрос на сервак*/
+    dispatch(setStatus(response.data));   /* То что придет задиспатчить*/
 };
 
-export const updateStatus = (status) => {
-    return (dispatch) => {
-        profileAPI.updateStatus(status)
-            .then(response => {
-                /*Анализируем resultCode если равно 0 то обрабатываем код / resultCode приходит с запросом в обьекте */
-                 if(response.data.resultCode === 0) {
-                    dispatch (setStatus(status));   /* То что придет задиспатчить*/
-                }
-            });
-
-    };
+export const updateStatus = (status) => async (dispatch) => {
+    let response = await profileAPI.updateStatus(status)
+    /*Анализируем resultCode если равно 0 то обрабатываем код / resultCode приходит с запросом в обьекте */
+    if (response.data.resultCode === 0) {
+        dispatch(setStatus(status));   /* То что придет задиспатчить*/
+    }
 };
 
 export default profileReducer;

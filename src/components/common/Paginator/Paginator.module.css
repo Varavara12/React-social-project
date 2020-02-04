@@ -1,0 +1,41 @@
+.paginator {
+    position: relative;
+    background: #272727;
+    display: flex;
+    justify-content: center;
+}
+.pageNumber {
+    padding: 10px 10px;
+    cursor: pointer;
+    margin: 0 5px;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+
+}
+
+.pageNumber.selectedPage {
+    font-weight: bold;
+    text-align: center;
+    color: #fff;
+    background: #313131;
+
+}
+
+.pageNumber:hover {
+    background: #313131;
+    color: #fff;
+    
+}
+
+.paginator button{
+    font-size: 15px;
+    color: rgb(205, 216, 228);
+    text-shadow: 0 -1px rgb(46, 53, 58);
+    font-weight: 500;
+    padding: 1px 1.2em;
+    border: 1px solid rgba(33, 43, 52, 1);
+    border-radius: 3px;
+    background: rgb(81, 92, 102) linear-gradient(rgb(49, 49, 49), rgb(49, 49, 49));
+    cursor: pointer;
+}

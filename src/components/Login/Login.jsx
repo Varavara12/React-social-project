@@ -17,7 +17,7 @@ const LoginForm = (props) => {
                       <Field placeholder={"Password"} type={"password"} name={"password"} component={Input} validate={[requireField]}/>
                 </div>
                 <div>
-                      <Field component={Input} name={"rememberMe"} type={"checkbox"} validate={[requireField]}/> remember me
+                      <Field component={Input} name={"rememberMe"} type={"checkbox"} validate={[]}/> remember me
                 </div>
               {
                   props.error && <div className={s.formSummeruError}>
