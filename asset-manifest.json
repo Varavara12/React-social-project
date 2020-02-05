@@ -1,0 +1,34 @@
+{
+  "files": {
+    "main.css": "/React-social-project/static/css/main.817bfdf3.chunk.css",
+    "main.js": "/React-social-project/static/js/main.4fb54b89.chunk.js",
+    "main.js.map": "/React-social-project/static/js/main.4fb54b89.chunk.js.map",
+    "runtime-main.js": "/React-social-project/static/js/runtime-main.700acac8.js",
+    "runtime-main.js.map": "/React-social-project/static/js/runtime-main.700acac8.js.map",
+    "static/js/2.a6f9ff73.chunk.js": "/React-social-project/static/js/2.a6f9ff73.chunk.js",
+    "static/js/2.a6f9ff73.chunk.js.map": "/React-social-project/static/js/2.a6f9ff73.chunk.js.map",
+    "static/css/3.c6a8dd5f.chunk.css": "/React-social-project/static/css/3.c6a8dd5f.chunk.css",
+    "static/js/3.77f118c8.chunk.js": "/React-social-project/static/js/3.77f118c8.chunk.js",
+    "static/js/3.77f118c8.chunk.js.map": "/React-social-project/static/js/3.77f118c8.chunk.js.map",
+    "static/css/4.b4924b5f.chunk.css": "/React-social-project/static/css/4.b4924b5f.chunk.css",
+    "static/js/4.b9f567b9.chunk.js": "/React-social-project/static/js/4.b9f567b9.chunk.js",
+    "static/js/4.b9f567b9.chunk.js.map": "/React-social-project/static/js/4.b9f567b9.chunk.js.map",
+    "index.html": "/React-social-project/index.html",
+    "precache-manifest.3708e9e743927cbf3b5d6736e45e97e8.js": "/React-social-project/precache-manifest.3708e9e743927cbf3b5d6736e45e97e8.js",
+    "service-worker.js": "/React-social-project/service-worker.js",
+    "static/css/3.c6a8dd5f.chunk.css.map": "/React-social-project/static/css/3.c6a8dd5f.chunk.css.map",
+    "static/css/4.b4924b5f.chunk.css.map": "/React-social-project/static/css/4.b4924b5f.chunk.css.map",
+    "static/css/main.817bfdf3.chunk.css.map": "/React-social-project/static/css/main.817bfdf3.chunk.css.map",
+    "static/js/2.a6f9ff73.chunk.js.LICENSE": "/React-social-project/static/js/2.a6f9ff73.chunk.js.LICENSE",
+    "static/media/login-bg.jpg": "/React-social-project/static/media/login-bg.d4b1d2f8.jpg",
+    "static/media/logo.png": "/React-social-project/static/media/logo.b3b9fe57.png",
+    "static/media/rolling.svg": "/React-social-project/static/media/rolling.3b545322.svg",
+    "static/media/users.png": "/React-social-project/static/media/users.57b075ed.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.700acac8.js",
+    "static/js/2.a6f9ff73.chunk.js",
+    "static/css/main.817bfdf3.chunk.css",
+    "static/js/main.4fb54b89.chunk.js"
+  ]
+}
