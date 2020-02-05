@@ -102,6 +102,18 @@
 }
 
 .loginBlock a{
-    color: green;
+    color: #ff7555;
     font-weight: 600;
+}
+
+.logout_btn{
+    font-size: 15px;
+    color: rgb(205, 216, 228);
+    text-shadow: 0 -1px rgb(46, 53, 58);
+    font-weight: 500;
+    padding: 1px 1.2em;
+    border: 1px solid rgba(33, 43, 52, 1);
+    border-radius: 3px;
+    background: rgb(81, 92, 102) linear-gradient(rgb(39, 39, 39), rgb(39, 39, 39));
+    cursor: pointer;
 }

@@ -134,3 +134,50 @@
 .social_links{
     display: flex;
 }
+
+/*====================status*/
+.main_status{
+    display: flex;
+    justify-content: flex-end;
+}
+
+.status{
+    color: #fff;
+}
+
+.input input{
+     border: 1px solid #585858;
+     background: #313131;
+     border-radius: 3px;
+     min-height: 20px;
+     font-size: 13px;
+
+     color: #fff;
+
+}
+
+.input_upload{
+    width: 0.1px;
+	height: 0.1px;
+	opacity: 0;
+	overflow: hidden;
+	position: absolute;
+	z-index: -1;
+}
+
+.label{
+    position: absolute;
+    left: 137px;
+    bottom: 146px;
+    display: inline-block;
+    font-size: 15px;
+    color: rgb(205, 216, 228);
+    text-shadow: 0 -1px rgb(46, 53, 58);
+    font-weight: 500;
+    padding: 1px 1.2em;
+    border: 1px solid rgba(33, 43, 52, 1);
+    border-radius: 3px;
+    background: rgb(81, 92, 102) linear-gradient(rgb(39, 39, 39), rgb(39, 39, 39));
+    cursor: pointer;
+    
+}

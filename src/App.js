@@ -2,7 +2,7 @@ import React, {Component, Suspense} from 'react';
 import './App.css';
 import './css/jquery.scrollbar.css'
 import NavBar from "./components/Navbar/Navbar";
-import {Route, withRouter} from "react-router-dom";
+import {Redirect, Route, withRouter} from "react-router-dom";
 import Music from "./components/Music/Music";
 import Settings from "./components/Settings/Settings";
 import UsersContainer from "./components/Users/UsersContainer";
@@ -32,6 +32,7 @@ class App extends Component {
                     <div className='app-wrapper'>
                         <NavBar/>
                         <div className='app-wrapper-content'>
+                            <Route path='/' render={() => <Redirect to={'/profile'}/>}/>
                             <Route path='/profile/:userId?' render={() => {
                                return <Suspense fallback={<div>Loading...</div>}>
                                     <ProfileContainer/>
